@@ -7,6 +7,35 @@
   </head>
   <body>
 
-    <h1>Handlebars</h1>
+    <style>
+      *{ margin: 0; padding: 0; } nav{ background-color: rgb(17, 13, 34);
+      height: 80px; display: flex; justify-content: flex-start; align-items:
+      center; padding: 10px; } nav ul{ display: flex; justify-content:
+      flex-start; align-items: center; column-gap: 20px; font-size: 32px;
+      list-style: none; color: white; } nav a{ color: white; } .container{
+      background-color: rgb(57, 57, 54); column-gap: 60px; padding: 150px;
+      width: 550px; display: flex; justify-content: center; align-items: center;
+      margin: auto; -webkit-box-shadow: 0px 2px 30px 5px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 2px 30px 5px rgba(0,0,0,0.75); box-shadow: 0px 2px
+      30px 5px rgba(0,0,0,0.75); } .container p{ color: rgb(123, 163, 197);
+      font-size: 28px; } .container span{ color: rgb(222, 225, 23); font-weight:
+      bolder; font-size: 40px; }
+    </style>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li> <a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <span>SIMPLE LOGIN Project</span>
+      <p><span style="color: rgb(192, 47, 47);">Welcome</span>
+        to the login system powered by Node.js! The login system is designed to
+        provide a seamless and secure authentication experience for users
+        accessing our platform.</p>
+    </div>
+
   </body>
 </html>
