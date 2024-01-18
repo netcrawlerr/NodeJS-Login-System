@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+nav {
+  background-color: rgb(84, 84, 86);
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+nav ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 20px;
+  font-size: 32px;
+  list-style: none;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: white;
+}
+nav a {
+  /* color: white; */
+  color: rgb(219, 155, 96);
+  text-decoration: none;
+}
+.container {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  background-color: rgb(57, 57, 54);
+  column-gap: 60px;
+  padding: 150px;
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  -webkit-box-shadow: 0px 2px 30px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 30px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 30px 5px rgba(0, 0, 0, 0.75);
+}
+.container p {
+  color: rgb(190, 181, 175);
+  font-size: 22px;
+}
+.container span {
+  color: rgb(14, 83, 245);
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.container h1 {
+  font-size: 46px;
+  text-align: center;
+  color: rgb(14, 234, 128);
+}

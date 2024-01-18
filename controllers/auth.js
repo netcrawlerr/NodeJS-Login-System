@@ -15,24 +15,44 @@ exports.register = (req, res) => {
   const { name, email, password, confirmPassword } = req.body;
 
   db.query(
-    "SELECT email from users where email = ?",
+    "SELECT COUNT(*) as count from users WHERE email = ?",
     [email],
     async (error, results) => {
       if (error) {
         console.log(error);
       }
-      if (results > 0) {
+
+      const emailCount = results[0].count;
+      if (emailCount > 0) {
         return res.render("register", {
           message: "That Email Has Been taken ",
         });
       } else if (password !== confirmPassword) {
         return res.render("register", {
-          message: "Passwords donot MATCH ",
+          message: "Passwords do not MATCH ",
         });
       }
 
-      let hashedPassword = await bcrypt.hash(password);
+      let hashedPassword = await bcrypt.hash(password, 10);
       console.log(hashedPassword);
+      db.query(
+        "INSERT INTO users SET ?",
+        {
+          name: name,
+          email: email,
+          password: hashedPassword,
+        },
+        (error, results) => {
+          if (error) {
+            console.log(error);
+          } else {
+            console.log(results);
+            return res.render("register", {
+              message: "User Registered",
+            });
+          }
+        }
+      );
     }
   );
 };
