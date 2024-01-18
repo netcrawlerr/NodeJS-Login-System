@@ -18,6 +18,10 @@ const db = mysql.createConnection({
 // Telling Node when sattic files are
 const publicDirection = path.join(__dirname, "./public");
 app.use(express.static(publicDirection));
+
+// Parsing URL Encoded bodies
+app.use(express.urlencoded({ extended: false }));
+
 // Template Engine
 app.set("view engine", "hbs");
 
@@ -30,10 +34,8 @@ db.connect((error) => {
   }
 });
 
-app.get("/", (req, res) => {
-  //   res.send("<h1>Home Page</h1>");
-  res.render("index");
-});
+app.use("/", require("./routes/pages"));
+app.use("/auth", require("./routes/auth"));
 
 app.listen(5000, (req, res) => {
   console.log("Server listening on port 5000 ......");

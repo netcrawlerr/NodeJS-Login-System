@@ -1,13 +1,21 @@
 <html>
   <head>
-    <link rel="stylesheet" href="/login.css" />
-    <title>Login Template</title>
+    <link rel="stylesheet" href="/register.css" />
+    <title>Register</title>
 
   </head>
   <body>
     <div class="login-container">
       <form action="/auth/register" method="post" class="login-form">
-        <h2>Login</h2>
+        {{#if message}}
+          <h4
+            id="error-message"
+            class="error-message"
+            style="background-color: rgb(238, 23, 23);"
+          >{{message}}</h4>
+        {{/if}}
+
+        <h2>Register</h2>
         <input type="text" name="name" placeholder="Name" required />
         <input type="email" name="email" placeholder="Email" required />
         <input
@@ -18,19 +26,16 @@
         />
         <input
           type="password"
-          name="passwordConfirm"
+          name="confirmPassword"
           placeholder="Confirm Password"
           required
         />
-        <input type="submit" value="Sign In" />
-        <p>
-          Don't Have An Account?
-          <a href="#">Register here</a>
-        </p>
+        <input type="submit" value="Register" />
+
+        <p> Already Have Account? <a id="login" href="/login">Login</a></p>
       </form>
-      {{#if message}}
-        <h4 style="background-color: rgb(214, 76, 76);">{{message}}</h4>
-      {{/if}}
+
     </div>
+
   </body>
 </html>
