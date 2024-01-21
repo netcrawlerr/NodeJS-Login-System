@@ -7,12 +7,9 @@
   <body>
     <div class="login-container">
       <form action="/auth/register" method="post" class="login-form">
+
         {{#if message}}
-          <h4
-            id="error-message"
-            class="error-message"
-            style="background-color: rgb(238, 23, 23);"
-          >{{message}}</h4>
+          <h4 class="error-message">{{message}}</h4>
         {{/if}}
 
         <h2>Register</h2>
@@ -31,11 +28,8 @@
           required
         />
         <input type="submit" value="Register" />
-
         <p> Already Have Account? <a id="login" href="/login">Login</a></p>
       </form>
-
     </div>
-
   </body>
 </html>
