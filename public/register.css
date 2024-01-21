@@ -97,4 +97,5 @@ body {
   height: 40px;
   line-height: 2.5;
   border-radius: 8px;
+  transition: 2s;
 }
