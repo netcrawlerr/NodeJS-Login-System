@@ -10,7 +10,10 @@
       form{ margin: auto; margin-top: 100px;}
     </style>
 
-    <form action="/auth/login" method="post" class="login-form">
+    <form novalidate action="/auth/login" method="post" class="login-form">
+      {{#if message}}
+        <h4 class="error-message">{{message}}</h4>
+      {{/if}}
       <h2>Login</h2>
 
       <input type="email" name="email" placeholder="Email" required />

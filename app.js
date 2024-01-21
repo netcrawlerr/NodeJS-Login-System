@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const mysql = require("mysql");
 const dotenv = require("dotenv");
+const cookieParser = require("cookie-parser");
 
 dotenv.config({ path: path.join("./config.env") });
 
@@ -22,6 +23,10 @@ app.use(express.static(publicDirection));
 // Parsing URL Encoded bodies
 app.use(express.urlencoded({ extended: false }));
 
+app.use(express.json());
+
+app.use(cookieParser());
+
 // Template Engine
 app.set("view engine", "hbs");
 
@@ -34,9 +39,10 @@ db.connect((error) => {
   }
 });
 
-app.use("/", require("./routes/pages"));
 app.use("/auth", require("./routes/auth"));
 
+app.use("/", require("./routes/pages"));
+
 app.listen(5000, (req, res) => {
-  console.log("Server listening on port 5000 ......");
+  console.log("Server listening on port 5001 ......");
 });
