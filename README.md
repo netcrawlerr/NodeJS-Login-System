@@ -38,6 +38,10 @@ Welcome to the NodeJS Login System! This project provides a basic authentication
    
 ## 📚Usage
 
+<h4>Navigate to Your project folder in the terminal</h4>
+
+<h6>npm start</h6>
+
 Visit http://localhost:5000 in your browser.
 Register a new account or log in with existing credentials.
 Explore your user profile and enjoy your personalized experience!
@@ -57,13 +61,41 @@ Ensure the .env file in the root directory has the required variables with appro
 Set up a MySQL database and update the .env file with the appropriate details.
 
 ## Put your Configurations Here
-DATABASE_HOST=
-DATABASE_USER=
-DATABASE_PASSWORD=
-DATABASE=
-JWT_SECRET=
-JWT_EXPIRES_IN=
-JWT_COOKIE_EXPIRES=
+
+<table>
+  <tr>
+    <th>Variable</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>DATABASE_HOST</td>
+    <td>Your database host</td>
+  </tr>
+  <tr>
+    <td>DATABASE_USER</td>
+    <td>Database username</td>
+  </tr>
+  <tr>
+    <td>DATABASE_PASSWORD</td>
+    <td>Database password</td>
+  </tr>
+  <tr>
+    <td>DATABASE</td>
+    <td>Database name</td>
+  </tr>
+  <tr>
+    <td>JWT_SECRET</td>
+    <td>Secret for JWT tokens</td>
+  </tr>
+  <tr>
+    <td>JWT_EXPIRES_IN</td>
+    <td>JWT token expiration</td>
+  </tr>
+  <tr>
+    <td>JWT_COOKIE_EXPIRES</td>
+    <td>Cookie expiration time</td>
+  </tr>
+</table>
 
 
 <div id="badges">
