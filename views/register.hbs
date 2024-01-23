@@ -9,7 +9,7 @@
       <form action="/auth/register" method="post" class="login-form">
 
         {{#if message}}
-          <h4 class="error-message">{{message}}</h4>
+          <h4 class="error-message" id="error-message">{{message}}</h4>
         {{/if}}
 
         <h2>Register</h2>
@@ -30,6 +30,14 @@
         <input type="submit" value="Register" />
         <p> Already Have Account? <a id="login" href="/login">Login</a></p>
       </form>
+
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() { var
+      errorMessage = document.getElementById('error-message'); if
+      (errorMessage){ setTimeout(function() { errorMessage.style.display =
+      'none'; }, 3000)}; });
+    </script>
   </body>
 </html>

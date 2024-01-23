@@ -23,4 +23,8 @@ router.get("/profile", authController.isLoggedIn, (req, res) => {
   }
 });
 
+router.get("*", (req, res) => {
+  res.render("error-page");
+});
+
 module.exports = router;
