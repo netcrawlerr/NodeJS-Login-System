@@ -108,3 +108,12 @@ Set up a MySQL database and update the .env file with the appropriate details.
   </a>
 </div>
 
+<h2 color:"Blue"></h2>
+<h4>Register</h4>
+![Screenshot 2024-01-23 080205](https://github.com/abdulmejidamk/NodeJS-Login-System/assets/100708946/1aa6cdc3-36a6-423a-a6f3-a86782584c44)
+
+<h4>Login</h4>
+![login](https://github.com/abdulmejidamk/NodeJS-Login-System/assets/100708946/b89b3b21-9b5c-4d0f-b852-1b3707548ef9)
+
+<h4>Logged In</h4>
+![logged](https://github.com/abdulmejidamk/NodeJS-Login-System/assets/100708946/9bf2c25e-2b3d-4c12-8969-fba08c20720c)
