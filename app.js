@@ -4,7 +4,7 @@ const mysql = require("mysql");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 
-dotenv.config({ path: path.join("./config.env") });
+dotenv.config({ path: path.join("./.env") });
 
 const app = express();
 
@@ -43,6 +43,6 @@ app.use("/auth", require("./routes/auth"));
 
 app.use("/", require("./routes/pages"));
 
-app.listen(5000, (req, res) => {
+app.listen(5100, (req, res) => {
   console.log("Server listening on port 5001 ......");
 });
