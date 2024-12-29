@@ -9,7 +9,6 @@ export const register = async (req, res) => {
     if (!email || !password || !name) {
       throw new Error("Fields Are Required");
     }
-
     const user = await prismaClient.user.findFirst({ where: { email } });
     if (user) {
       return res
@@ -31,11 +30,7 @@ export const register = async (req, res) => {
         verificationTokenExpiresAt: verificationTokenExpiresAt,
       },
     });
-
-    // create token jwt and send emeail
-
     generateTokenAndSetCookie(res, newUser.id);
-
     res.status(201).json({
       success: true,
       message: "User Created Successfully",
@@ -46,8 +41,20 @@ export const register = async (req, res) => {
   }
 };
 
-export const login = (req, res) => {
-  res.send("Login Controller");
+export const login = async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await prismaClient.user.findFirst({ where: { email } });
+    if (!user) {
+      return res.json({ msg: "User Not Found" });
+    }
+
+    if (user && (await bcryptjs.compare(password, user.password))) {
+      return res.status(200).json({ msg: "User Logged In" });
+    }
+  } catch (error) {
+    return res.status(500).json({ msg: "Internal Server Error" });
+  }
 };
 
 export const logout = (req, res) => {
