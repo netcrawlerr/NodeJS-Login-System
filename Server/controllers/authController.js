@@ -48,13 +48,22 @@ export const login = async (req, res) => {
   try {
     const user = await prismaClient.user.findFirst({ where: { email } });
     if (!user) {
-      return res.json({ msg: "User Not Found" });
+      return res.status(404).json({ msg: "User Not Found" });
     }
 
-    if (user && (await bcryptjs.compare(password, user.password))) {
+    const isPasswordValid = await bcryptjs.compare(password, user.password);
+    if (isPasswordValid) {
+      await prismaClient.user.update({
+        where: { email },
+        data: { lastLogin: new Date() },
+      });
+
       return res.status(200).json({ msg: "User Logged In" });
+    } else {
+      return res.status(401).json({ msg: "Invalid Credentials" });
     }
   } catch (error) {
+    console.error("Error during login:", error);
     return res.status(500).json({ msg: "Internal Server Error" });
   }
 };
