@@ -1,5 +1,5 @@
 import { mailtrapClient, sender } from "./mailtrap.js";
-import { VERIFICATION_EMAIL_TEMPLATE } from "./emailTemplates.js";
+import { Verification_Template } from "./templates/verifyTemplate.js";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -11,7 +11,7 @@ export const sendVerificationEmail = async (email, verificationToken) => {
       from: sender,
       to: recipient,
       subject: "Verify your email",
-      html: VERIFICATION_EMAIL_TEMPLATE.replace(
+      html: Verification_Template.replace(
         "{verificationCode}",
         verificationToken
       ),
